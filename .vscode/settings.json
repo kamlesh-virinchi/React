@@ -2,5 +2,6 @@
     "prettier.tabWidth": 2,
     "prettier.singleAttributePerLine": false,
     "prettier.jsxSingleQuote": false,
-    "prettier.printWidth": 600
+    "prettier.printWidth": 600,
+    "git.ignoreLimitWarning": true
 }
