@@ -5,7 +5,7 @@ import FormBhar from "./componant/FormBhar";
 import Navbar from "./componant/UparDekh";
 // import Meme from "./componant/Meme";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light"); //tells Dark Mode Status
@@ -36,23 +36,17 @@ function App() {
 
   return (
     <>
-      {" "}
-      <Router>
+      <BrowserRouter>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <FormBhar heading="Input de Bhai" mode={mode} showAlert={showAlert} />
-            </Route>
-          </Switch>
-          <About />
+          <Routes>
+            <Route exact path="/" element={<FormBhar heading="Input de Bhai" mode={mode} showAlert={showAlert} />} />
+            <Route exact path="/about" element={<About />} />
+          </Routes>
           {/* <Meme/> */}
         </div>
-      </Router>
+      </BrowserRouter>
     </>
   );
 }
