@@ -32,20 +32,20 @@ export default function FormBhar(props) {
         <div className="mb-3">
           <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="1" style={{ backgroundColor: props.mode === "dark" ? "#2f3336" : "#ffffff", color: props.mode === "dark" ? "#ffffff" : "#2f3336" }}></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2 my1" onClick={handleUpClick}>
           Sab Bada krna
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button className="btn btn-primary mx-2 my1" onClick={handleLowClick}>
           Sab Chotha krna
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+        <button className="btn btn-primary mx-2 my1" onClick={handleClearClick}>
           Sab Hata
         </button>
       </div>
       <div className="container my-3 " style={{ color: props.mode === "dark" ? "#ffffff" : "#2f3336" }}>
         <h2>Tera Output Bhai</h2>
         <p>
-          Sab word <b>{text.split(" ").length}</b> Aur lambayi <b>{text.length}</b>{" "}
+          Sab word <b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> Aur lambayi <b>{text.length}</b>{" "}
         </p>
         <p>
           <b>{0.008 * text.split(" ").length}</b> Minutes me padha jayenga

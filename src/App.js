@@ -42,7 +42,7 @@ function App() {
         <div className="container my-3">
           <Routes>
             <Route exact path="/" element={<FormBhar heading="Input de Bhai" mode={mode} showAlert={showAlert} />} />
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
           </Routes>
           {/* <Meme/> */}
         </div>
